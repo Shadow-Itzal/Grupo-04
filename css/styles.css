@@ -1,0 +1,514 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    /* ............... */
+    /* Media Queries - Estilos generales */
+
+/* Estilos para pantallas pequeñas - Smartphone (hasta 767px de ancho) */
+/* @media screen and (max-width: 767px) {} */
+
+/* Estilos para pantallas medianas - Tablets (de 768px a 1023px de ancho) */
+/* @media screen and (min-width: 768px) and (max-width: 1023px) {} */
+
+
+
+
+
+/* Comienzo de INICIO */
+
+/* Estilos del encabezado */
+.header {
+    background-color: #EEEEEE;/* color de fondo del encabezado*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%; /*espaciado interno del encabezado */
+}
+
+
+/* imagen logo */
+
+.header .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img {
+    border-radius: 60px;
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del logo al pasar el mouse */
+}
+
+
+/* botones del nav */
+
+.header .nav-links {
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.2);
+}
+
+.header .nav-links a {
+    font-size: 700;
+    color: green;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.header .nav-links li a:hover {
+    color: #ffbc0e; /* Cambia el color del enlace al pasar el mouse */
+}
+
+
+/* Estilos del menú hamburguesa */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: #EEEEEE;
+    padding: 6px;
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background: green;
+    margin: 4px 0;
+    transition: 0.4s; /* Transición para la animación */
+}
+
+/* Animación para convertir el menú hamburguesa en una 'X' */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-7px, 8px); /* mueve la linea para quedar en diagonal */
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Oculta la segunda línea */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header .nav-links {
+        display: none; /* Oculta los enlaces de navegación por defecto */
+        position: absolute;
+        top: 85px; /* Posiciona el menú debajo del encabezado */
+        right: 10%;
+        background: #EEEEEE;
+        width: 200px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
+        text-align: center;
+    }
+
+    .header .nav-links.active {
+        display: flex; /* Muestra los enlaces de navegación cuando está activo */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+    }
+}
+
+
+
+
+
+
+
+/* arreglo del body */
+
+body {
+    background-color: #FFF5E4;
+}
+
+
+/* Primera parte (imagen y debajo texto, todo centrado) */
+
+.contenedor-presentacion {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* coloca un margen superior */
+}
+
+.contenedor-presentacion h1 {
+    font-size: 26px;
+}
+
+.contenedor-presentacion img {
+    display: block; /* para eliminar el espacio adicional debajo de la imagen */
+    margin: 0 auto; /* para centrar la imagen horizontal */
+    width: 30%;
+    height: auto; /* para mantener la proporcion de aspecto de la imagen */
+    border-radius: 20px; /* agregar esquinas redondeadas a la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
+}
+
+.contenedor-presentacion p {
+    display: block;
+    margin-top: 10px; /* espacio entre imagen y texto */
+    font-size: 20px; /* tamaño del texto */
+    line-height: 1.5; /* ajusta el espaciado entre lineas del texto */
+    max-width: 78%; /* ancho maximo del parrafo */
+}
+
+
+/* Mini resumen de cada seccion y un modo de ir a ellas, sin el nav */
+
+/* 1º contenedor */
+
+.contenedor-secciones {
+    display: flex; /* los elementos hijos se colocan una al lado del otro */
+    text-align: center;
+    flex-flow: row wrap; 
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 25px; /* agregar esquinas redondeadas a la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
+    margin: 20px;
+    padding: 20px;
+}
+
+.texto {
+    flex: 1; /* significa que ocuparan el mismo espacio horizontal dentro del contenedor */
+    padding-right: 40px; /* espacio entre el texto y la imagen */
+}
+
+.texto a{
+    color: darkgreen;
+}
+
+.texto a:hover{
+    color: crimson;
+}
+
+.imagen {
+    flex: 1;
+}
+
+.imagen img {
+    width: 90%;
+    height: auto;
+}
+
+
+/* 2º contenedor */
+
+.contenedor-secciones-2 {
+    display: flex; /* los elementos hijos se colocan una al lado del otro */
+    text-align: center;
+    flex-flow: row wrap; 
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 25px; /* agregar esquinas redondeadas a la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
+    margin: 20px;
+    padding: 20px;
+}
+
+.texto2 {
+    flex: 1; /* significa que ocuparan el mismo espacio horizontal dentro del contenedor */
+    padding-right: 40px; /* espacio entre el texto y la imagen */
+}
+
+.texto2 a{
+    color: darkgreen;
+}
+
+.texto2 a:hover{
+    color: crimson;
+}
+
+.imagen2 {
+    flex: 1;
+}
+
+.imagen2 img {
+    width: 90%;
+    height: auto;
+}
+
+
+/* arreglo del footer */
+
+footer {
+    background-color: #EEEEEE;
+    /* padding: 10px 30px; */
+    color: black;
+    text-align: center; /* centra en contenido del footer */
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer section {
+    float: right;
+    text-align: right;
+}
+
+.footer a {
+    transition: color 0.3s ease;
+    color: rgb(83, 83, 83);
+    text-decoration: none;
+    
+}
+
+footer a:hover {
+    color: darkgoldenrod;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elem {
+    list-style: none;
+}
+
+.icon {
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.text {
+    color: grey;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* Fin de INICIO */
+
+
+
+/* Comienzo de RECETAS */
+
+.secciones-recetas {
+    background-color: #a0d6a2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 1em 0;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.menu-container {
+    position: absolute;
+    right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .secciones-recetas {
+    background-color: #a0d6a2;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    padding: 1em 0;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+} */
+
+.container-receta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "titulo titulo titulo"
+        "ingredientes proteinas imagen"
+        "preparacion preparacion imagen";
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.receta-titulo {
+    grid-area: titulo;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #4CAF50;
+}
+
+.receta-imagen {
+    grid-area: imagen;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+    /* width: 10px; */
+    height: 370px;
+}
+
+.receta-imagen img {
+    width: 100%;
+    border-radius: 10px;
+    align-self: center;
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    max-height: 100%;
+    object-fit: contain; /* ajusta la imagen dentro del contenedor */ 
+}
+
+.receta-ingredientes {
+    grid-area: ingredientes;
+    background-color: #f4f4f4;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+}
+
+.proteinas {
+    grid-area: proteinas;
+    background-color: #f4f4f4;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 40px;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+}
+
+
+.receta-preparacion {
+    grid-area: preparacion;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+}
+
+.receta-ingredientes h3, .receta-ingredientes h4, .proteinas h3, .proteinas h4, .receta-preparacion h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.receta-ingredientes ul, .receta-preparacion ol {
+    margin-left: 20px;
+}
+
+
+
+
+
+/* Fin de RECETAS */
+
+
+
+
+
+
+
+/* Comienzo de BIENESTAR */
+
+/* Fin de BIENESTAR */
+
+
+
+
+
+
+
+
+/* Comienzo de PRIMEROS AUXILIOS */
+
+/* Fin de PRIMEROS AUXILIOS */
+
+
+
+
+
+
+/* Comienzo de NOSOTROS */
+
+/* Pimera parte (imagen y debajo texto, todo centrado) */
+
+.contenedor-nosotros {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-nosotros img {
+    display: block; /* para eliminar el espacio adicional debajo de la imagen */
+    margin: 0 auto; /* para centrar la imagen horizontal */
+    width: 40%;
+    height: auto; /* para mantener la proporcion de aspecto de la imagen */
+    border-radius: 20px; /* agregar esquinas redondeadas a la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
+}
+
+.contenedor-nosotros p {
+    display: block;
+    margin-top: 10px; /* espacio entre imagen y texto */
+    font-size: 20px; /* tamaño del texto */
+    line-height: 1.5; /* ajusta el espaciado entre lineas del texto */
+    max-width: 78%; /* ancho maximo del parrafo */
+}
+
+/* Fin de NOSOTROS */
