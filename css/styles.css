@@ -110,6 +110,7 @@
     transform: rotate(45deg) translate(-7px, -8px);
 }
 
+
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
     .header .nav-links {
@@ -135,11 +136,6 @@
         display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
     }
 }
-
-
-
-
-
 
 
 /* arreglo del body */
@@ -328,51 +324,82 @@ footer a:hover {
 
 /* Comienzo de RECETAS */
 
+/* Contenedor principal para las secciones y el menú */
 .secciones-recetas {
+    display: flex;
+    justify-content: space-between; /* Distribuye el h2 y el menú desplegable en extremos opuestos */
+    align-items: center; /* Centra verticalmente el contenido dentro del contenedor */
+    padding: 10px;
+    border: 1px solid #ccc; /* Añade un borde alrededor del contenedor principal */
+    border-radius: 10px; /* Bordes redondeados para el contenedor principal */
     background-color: #a0d6a2;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    padding: 1em 0;
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
 }
 
-h2 {
-    margin: 0;
+/* Estilo del título h2 */
+.secciones-recetas h2 {
+    margin: 0; /* Elimina el margen por defecto del h2 */
+    flex-grow: 1; /* Permite que el h2 ocupe todo el espacio disponible entre el menú y el borde izquierdo */
+    text-align: center; /* Centra el texto del h2 */
     font-size: 30px;
 }
 
+/* Contenedor del menú */
 .menu-container {
-    position: absolute;
-    right: 20px;
+    position: relative; /* Establece que la posición del contenedor puede ser modificada con respecto a su posición normal. */
+    display: inline-block; /* Hace que el contenedor sea un elemento de bloque, pero que se comporte como un elemento en línea (permitiendo otros elementos en la misma línea). */
 }
 
+/* Botón del menú desplegable */
+.dropbtn {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-/* .secciones-recetas {
-    background-color: #a0d6a2;
-    color: white;
+/* Contenido del menú desplegable */
+.dropdown-content {
+    display: none; /* Oculta el menú desplegable por defecto. */
+    position: absolute; /* Posiciona el menú desplegable en relación a su contenedor padre .menu-container. */
+    right: 0; /* Alinea el menú desplegable con el borde derecho del contenedor */
+    background-color: #f9f9f9;
+    min-width: 160px; /* Define un ancho mínimo para el menú desplegable. */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    z-index: 1; /* Asegura que el menú desplegable se superponga sobre otros elementos. */
+    border-radius: 10px;
     text-align: center;
-    margin-top: 10px;
-    padding: 1em 0;
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-} */
+}
 
+/* Estilo de los enlaces del menú */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Efecto hover en los enlaces del menú */
+.dropdown-content a:hover {
+    background-color: #a0d6a2;
+    border-radius: 10px;
+}
+
+/* Mostrar el menú al hacer hover sobre el contenedor */
+.menu-container:hover .dropdown-content {
+    display: block; /* Muestra el menú desplegable cuando el ratón pasa sobre el contenedor del menú (.menu-container). */
+}
+
+/* Efecto hover en el botón */
+.menu-container:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* recetas */
 .container-receta {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -433,7 +460,6 @@ h2 {
     border: 1px solid #4CAF50;
 }
 
-
 .receta-preparacion {
     grid-area: preparacion;
     background-color: #f4f4f4;
@@ -450,7 +476,6 @@ h2 {
 .receta-ingredientes ul, .receta-preparacion ol {
     margin-left: 20px;
 }
-
 
 
 
