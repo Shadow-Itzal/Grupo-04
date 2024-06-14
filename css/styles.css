@@ -355,6 +355,7 @@ footer a:hover {
     background-color: #4CAF50; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     padding: 10px;
+    margin-right: 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px; /* Bordes redondeados para el botón */
