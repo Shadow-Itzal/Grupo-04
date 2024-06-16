@@ -334,6 +334,7 @@ footer a:hover {
     border-radius: 10px; /* Bordes redondeados para el contenedor principal */
     background-color: #a0d6a2;
     color: white;
+    margin: 5px;
 }
 
 /* Estilo del título h2 */
@@ -423,6 +424,10 @@ footer a:hover {
     border: 2px solid #4CAF50;
 }
 
+.receta-titulo h2 {
+    font-size: 25px;
+}
+
 .receta-imagen {
     grid-area: imagen;
     background-color: #f4f4f4;
@@ -437,9 +442,9 @@ footer a:hover {
     width: 100%;
     border-radius: 10px;
     align-self: center;
-    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
-    max-height: 100%;
-    object-fit: contain; /* ajusta la imagen dentro del contenedor */ 
+    width: 100%; /* Ocupa el 100% del ancho de la celda del grid */
+    height: 100%; /* Ocupa el 100% del alto de la celda del grid */
+    object-fit: cover; /* Ajusta la imagen manteniendo la proporción y recortándola si es necesario */
 }
 
 .receta-ingredientes {
@@ -469,14 +474,79 @@ footer a:hover {
     border: 1px solid #4CAF50;
 }
 
-.receta-ingredientes h3, .receta-ingredientes h4, .proteinas h3, .proteinas h4, .receta-preparacion h3 {
+.receta-ingredientes h3, .proteinas h3, .proteinas h4, .receta-preparacion h3 {
     margin-top: 0;
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .receta-ingredientes ul, .receta-preparacion ol {
     margin-left: 20px;
 }
+
+/* Media query para pantallas menores a 768px (móviles y tablets pequeñas) */
+@media screen and (max-width: 767px) {
+    .secciones-recetas h2 {
+        font-size: 23px; 
+    }
+
+    .container-receta {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto); 
+        grid-template-areas: 
+        "titulo"
+        "imagen"
+        "ingredientes"
+        "preparacion"
+        "proteinas"
+    } 
+
+    .receta-ingredientes ul, .proteinas ul, .receta-preparacion {
+        font-size: 15px;
+    }
+
+    .receta-titulo h2 {
+        font-size: 18px;
+    }
+
+    .proteinas h4 {
+        font-size: 16px;
+    }
+
+    .receta-ingredientes h3, .proteinas h3, .proteinas h4, .receta-preparacion h3 {
+        text-align: center;
+    }
+
+}
+
+/* Media query para pantallas entre 768px y 1023px (tablets y pantallas pequeñas de escritorio) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .secciones-recetas h2 {
+        font-size: 25px;
+    }
+
+    .container-receta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto; /* Sigue igual, este iria o no? */
+        grid-template-areas: 
+        "titulo titulo"
+        "imagen proteinas"
+        "ingredientes preparacion"
+    }
+
+    .receta-ingredientes, .proteinas, .receta-preparacion {
+        font-size: 18px;
+    }
+
+    .receta-titulo h2 {
+        font-size: 22px;
+    }
+
+}
+
 
 
 
