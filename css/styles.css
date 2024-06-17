@@ -87,6 +87,9 @@
     background-color: #EEEEEE;
     padding: 6px;
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
+    position: absolute; /* necesario para usar el z-index */
+    z-index: 2; /* mayor valor de z-index, estara por encima de otros menus */
+
 }
 
 .hamburger-menu span {
