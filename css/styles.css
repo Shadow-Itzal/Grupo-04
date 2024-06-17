@@ -78,6 +78,8 @@
 }
 
 
+            /* ----------------- INICIO MENU HAMBURGUESA -------------------- */
+
 /* Estilos del menú hamburguesa */
 .hamburger-menu {
     display: none; /* Oculto por defecto */
@@ -87,22 +89,24 @@
     background-color: #EEEEEE;
     padding: 6px;
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
+
+    /* intento de que menu este sobre otro y no funciono */
     position: absolute; /* necesario para usar el z-index */
     z-index: 2; /* mayor valor de z-index, estara por encima de otros menus */
 
 }
 
 .hamburger-menu span {
-    height: 3px;
-    width: 25px;
+    height: 2px;
+    width: 20px;
     background: green;
-    margin: 4px 0;
+    margin: 3px 0;
     transition: 0.4s; /* Transición para la animación */
 }
 
 /* Animación para convertir el menú hamburguesa en una 'X' */
 .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-7px, 8px); /* mueve la linea para quedar en diagonal */
+    transform: rotate(-45deg) translate(-4px, 7px); /* mueve la linea para quedar en diagonal */
 }
 
 .hamburger-menu.active span:nth-child(2) {
@@ -110,7 +114,7 @@
 }
 
 .hamburger-menu.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-7px, -8px);
+    transform: rotate(45deg) translate(-4px, -7px);
 }
 
 
@@ -140,6 +144,7 @@
     }
 }
 
+            /* ---------------- FIN MENU HAMBURGUESA ----------------- */
 
 /* arreglo del body */
 
@@ -187,8 +192,8 @@ body {
 .contenedor-secciones {
     display: flex; /* los elementos hijos se colocan una al lado del otro */
     text-align: center;
-    flex-flow: row wrap; 
-    justify-content: space-evenly;
+    flex-flow: row wrap; /* se colocarán en filas horizontales (de izquierda a derecha) y se envolverán a la siguiente fila si no hay suficiente espacio en la fila actual. */
+    justify-content: space-evenly; /* alinea los elementos de manera que haya un espacio igual entre ellos y en los extremos del contenedor. */
     align-items: center;
     border-radius: 25px; /* agregar esquinas redondeadas a la imagen */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
@@ -216,6 +221,7 @@ body {
 .imagen img {
     width: 90%;
     height: auto;
+    border-radius: 15px;
 }
 
 
@@ -248,11 +254,13 @@ body {
 
 .imagen2 {
     flex: 1;
+    
 }
 
 .imagen2 img {
     width: 90%;
     height: auto;
+    border-radius: 15px;
 }
 
 
@@ -320,6 +328,188 @@ footer a:hover {
     font-size: 16px;
     opacity: 0.7;
 }
+
+
+/* ............... */
+    /* Media Queries - Estilos generales */
+
+/* Estilos para pantallas pequeñas - Smartphone (hasta 767px de ancho) */
+@media screen and (max-width: 767px) {
+
+    .contenedor-presentacion h1 {
+        font-size: 24px;
+    }
+
+    .contenedor-presentacion img {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .contenedor-presentacion p {
+        font-size: 17px; /* tamaño del texto */
+        line-height: 1.2; /* ajusta el espaciado entre lineas del texto */
+        max-width: 68%; /* ancho maximo del parrafo */
+    }
+
+
+    /* Mini resumen de cada seccion y un modo de ir a ellas, sin el nav */
+
+    /* 1º contenedor */
+
+    .contenedor-secciones {
+        display: flex;
+        flex-direction: column-reverse; /* Mostrar en una columna */
+        margin-top: 10px;
+    }
+
+    .texto {
+        margin-bottom: 10px; /* Espacio entre texto e imagen */
+        text-align: center; /* Centrar el texto horizontalmente */
+        line-height: 1.1;
+        font-size: 17px;
+        padding-right: 0;
+    }
+    
+    .imagen {
+        text-align: center; /* Centrar la imagen horizontalmente */
+        margin-top: 10px;
+        margin-bottom: 15px;
+        
+    }
+    
+    .imagen img {
+        max-width: 70%; /* Ajustar tamaño máximo de la imagen */
+    }
+
+    /* 2º Contenedor */
+
+    .contenedor-secciones-2 {
+        display: flex;
+        flex-direction: column-reverse; /* Mostrar en una columna */
+        margin-top: 10px;
+    }
+
+    .texto2 {
+        margin-bottom: 10px; /* Espacio entre texto e imagen */
+        text-align: center; /* Centrar el texto horizontalmente */
+        line-height: 1.1;
+        
+        font-size: 17px;
+        padding-right: 0;
+    }
+    
+    .imagen2 {
+        text-align: center; /* Centrar la imagen horizontalmente */
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .imagen2 img {
+        max-width: 70%; /* Ajustar tamaño máximo de la imagen */
+    }
+
+    .footer section {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+
+} 
+
+
+/* Estilos para pantallas medianas - Tablets (de 768px a 1023px de ancho) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    /* Primera parte (imagen y debajo texto, todo centrado) */
+    
+    .contenedor-presentacion h1 {
+        font-size: 25px;
+    }
+
+    .contenedor-presentacion img {
+        width: 35%;
+        margin-bottom: 12px;
+    }
+
+    .contenedor-presentacion p {      
+        font-size: 19px;
+        line-height: 1.3;
+    }
+
+    /* Mini resumen de cada seccion y un modo de ir a ellas, sin el nav */
+
+    /* 1º contenedor */
+
+    .contenedor-secciones {
+        display: flex;
+        flex-direction: column-reverse; /* Mostrar en una columna */
+        margin-top: 10px;
+    }
+
+    .texto {
+        margin-bottom: 10px; /* Espacio entre texto e imagen */
+        text-align: center; /* Centrar el texto horizontalmente */
+        line-height: 1.3;
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .imagen {
+        text-align: center; /* Centrar la imagen horizontalmente */
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .imagen img {
+        max-width: 70%; /* Ajustar tamaño máximo de la imagen */
+    }
+
+    /* 2º Contenedor */
+
+    .contenedor-secciones-2 {
+        display: flex;
+        flex-direction: column-reverse; /* Mostrar en una columna */
+        margin-top: 10px;
+    }
+
+    .texto2 {
+        margin-bottom: 10px; /* Espacio entre texto e imagen */
+        text-align: center; /* Centrar el texto horizontalmente */
+        line-height: 1.3;
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .imagen2 {
+        text-align: center; /* Centrar la imagen horizontalmente */
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .imagen2 img {
+        max-width: 70%; /* Ajustar tamaño máximo de la imagen */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Fin de INICIO */
 
