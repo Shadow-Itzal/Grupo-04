@@ -7,17 +7,6 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-    /* ............... */
-    /* Media Queries - Estilos generales */
-
-/* Estilos para pantallas pequeñas - Smartphone (hasta 767px de ancho) */
-/* @media screen and (max-width: 767px) {} */
-
-/* Estilos para pantallas medianas - Tablets (de 768px a 1023px de ancho) */
-/* @media screen and (min-width: 768px) and (max-width: 1023px) {} */
-
-
-
 
 
 /* Comienzo de INICIO */
@@ -29,7 +18,7 @@
     justify-content: flex-end;
     align-items: center;
     height: 85px;
-    padding: 5px 10%; /*espaciado interno del encabezado */
+    padding: 5px 5%; /*espaciado interno del encabezado */
 }
 
 
@@ -118,7 +107,8 @@
 }
 
 
-/* Media query para pantallas pequeñas */
+/* Media query para pantallas pequeñas, solo del menu hamburguesa */
+
 @media (max-width: 768px) {
     .header .nav-links {
         display: none; /* Oculta los enlaces de navegación por defecto */
@@ -268,7 +258,6 @@ body {
 
 footer {
     background-color: #EEEEEE;
-    /* padding: 10px 30px; */
     color: black;
     text-align: center; /* centra en contenido del footer */
     position: relative;
@@ -289,7 +278,6 @@ footer section {
     transition: color 0.3s ease;
     color: rgb(83, 83, 83);
     text-decoration: none;
-    
 }
 
 footer a:hover {
@@ -331,7 +319,7 @@ footer a:hover {
 
 
 /* ............... */
-    /* Media Queries - Estilos generales */
+    /* Media Queries - Estilos generales - Pagina de INICIO */
 
 /* Estilos para pantallas pequeñas - Smartphone (hasta 767px de ancho) */
 @media screen and (max-width: 767px) {
@@ -358,7 +346,7 @@ footer a:hover {
 
     .contenedor-secciones {
         display: flex;
-        flex-direction: column-reverse; /* Mostrar en una columna */
+        flex-direction: column; /* Mostrar en una columna */
         margin-top: 10px;
     }
 
@@ -385,7 +373,7 @@ footer a:hover {
 
     .contenedor-secciones-2 {
         display: flex;
-        flex-direction: column-reverse; /* Mostrar en una columna */
+        flex-direction: column; /* Mostrar en una columna */
         margin-top: 10px;
     }
 
@@ -418,14 +406,11 @@ footer a:hover {
         font-size: 14px;
     }
 
-
 } 
 
 
 /* Estilos para pantallas medianas - Tablets (de 768px a 1023px de ancho) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    
-    /* Primera parte (imagen y debajo texto, todo centrado) */
     
     .contenedor-presentacion h1 {
         font-size: 25px;
@@ -496,19 +481,6 @@ footer a:hover {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Fin de INICIO */
@@ -605,7 +577,7 @@ footer a:hover {
         "preparacion preparacion imagen";
     gap: 20px;
     padding: 20px;
-    flex: 1;
+    flex: 1; /* forma abreviada de indicar que un elemento debe crecer y encogerse proporcionalmente para ocupar el espacio disponible dentro de un contenedor flexible, partiendo de un tamaño inicial de 0. Esto hace que los elementos se distribuyan equitativamente dentro del contenedor si todos tienen flex: 1. */
 }
 
 .receta-titulo {
@@ -627,7 +599,6 @@ footer a:hover {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #4CAF50;
-    /* width: 10px; */
     height: 370px;
 }
 
@@ -677,6 +648,10 @@ footer a:hover {
     margin-left: 20px;
 }
 
+
+                    /* ............... */
+            /* Media Queries - Estilos generales */
+
 /* Media query para pantallas menores a 768px (móviles y tablets pequeñas) */
 @media screen and (max-width: 767px) {
     .secciones-recetas h2 {
@@ -713,6 +688,7 @@ footer a:hover {
 
 }
 
+
 /* Media query para pantallas entre 768px y 1023px (tablets y pantallas pequeñas de escritorio) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
@@ -741,14 +717,7 @@ footer a:hover {
 }
 
 
-
-
-
 /* Fin de RECETAS */
-
-
-
-
 
 
 
@@ -758,17 +727,9 @@ footer a:hover {
 
 
 
-
-
-
-
-
 /* Comienzo de PRIMEROS AUXILIOS */
 
 /* Fin de PRIMEROS AUXILIOS */
-
-
-
 
 
 
@@ -803,7 +764,6 @@ footer a:hover {
 
                     /* ............... */
             /* Media Queries - Estilos generales */
-
 
 /* Estilos para pantallas pequeñas - Smartphone (hasta 767px de ancho) */
 @media screen and (max-width: 767px) {
