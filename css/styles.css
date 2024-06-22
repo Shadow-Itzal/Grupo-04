@@ -19,6 +19,10 @@
     align-items: center;
     height: 85px;
     padding: 5px 5%; /*espaciado interno del encabezado */
+    
+    /* espero funcione, esta conectado con main de receta */
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -79,10 +83,12 @@
     padding: 6px;
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
 
-    /* intento de que menu este sobre otro y no funciono */
-    position: absolute; /* necesario para usar el z-index */
-    z-index: 2; /* mayor valor de z-index, estara por encima de otros menus */
+    /* intento de que menu este sobre otro y no funciono. */
+    /*position: absolute;  necesario para usar el z-index */
+    /*z-index: 2;  mayor valor de z-index, estara por encima de otros menus */
 
+    /* Lo que si resulto: poner en el Header; position: relative y z-index: 2. 
+    Ademas de crear un Main que abarque todo lo de receta y ponerle; position: relative y z-index: 1.  */
 }
 
 .hamburger-menu span {
@@ -489,6 +495,12 @@ footer a:hover {
 
 /* Comienzo de RECETAS */
 
+/* esta clase fue creada para que el menu "Ir a..." quede debajo del menu hamburguesa */
+.posicionamiento {
+    position: relative; /* Establece que la posición del contenedor puede ser modificada con respecto a su posición normal. */
+    z-index: 1;
+}
+
 /* Contenedor principal para las secciones y el menú */
 .secciones-recetas {
     display: flex;
@@ -512,7 +524,6 @@ footer a:hover {
 
 /* Contenedor del menú */
 .menu-container {
-    position: relative; /* Establece que la posición del contenedor puede ser modificada con respecto a su posición normal. */
     display: inline-block; /* Hace que el contenedor sea un elemento de bloque, pero que se comporte como un elemento en línea (permitiendo otros elementos en la misma línea). */
 }
 
@@ -587,10 +598,12 @@ footer a:hover {
     border-radius: 10px;
     text-align: center;
     border: 2px solid #4CAF50;
+
 }
 
 .receta-titulo h2 {
     font-size: 25px;
+    
 }
 
 .receta-imagen {
