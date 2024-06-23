@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+
 /* Estilos generales */
 * {
     box-sizing: border-box;
@@ -744,10 +746,6 @@ footer a:hover {
     color: darkgreen;
     font-size: 25px;
 }
-.habitos{
-    margin: 25px;
-    padding: 25px;
-}
 
 .texto3{
     font-family: "Roboto", sans-serif;
@@ -756,10 +754,19 @@ footer a:hover {
     color:black;
 }
 
+.habitos{
+    margin: 25px;
+    padding: 25px;
+}
+
 .titulo4{
     color:darkgreen;
     text-align: left;
     font-size: 25px;
+}
+
+.lista-habitos {
+    text-align: left;
 }
 
 .videos{
@@ -784,7 +791,7 @@ footer a:hover {
 .titulo3{
     color:darkgreen;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .container-primeros-auxilios {
@@ -813,7 +820,7 @@ footer a:hover {
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 10px;
-    border: 5px solid #4CAF50;
+    border: 2px solid #4CAF50;
     height: auto;
 } 
 
@@ -848,11 +855,10 @@ footer a:hover {
         flex: 1;
     } 
 
-    .video-arreglado{
-        padding-top: 20px;
-        padding-bottom: 40px;
+    .videos iframe{
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -862,15 +868,16 @@ footer a:hover {
         grid-template-rows: auto auto;
         grid-template-areas: 
             "titulo"
-            "primeros-aux" "imagen";
+            "primeros-aux" 
+            "imagen";
         gap: 20px;
         padding: 20px;
         flex: 1;
     } 
 
-    .video-arreglado{
-        padding-top: 20px;
-        padding-bottom: 40px;
+    .videos iframe{
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
