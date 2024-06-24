@@ -789,11 +789,6 @@ footer a:hover {
 
 /* Comienzo de PRIMEROS AUXILIOS */
 
-.titulo3{
-    color:darkgreen;
-    text-align: center;
-    /* font-family: 'Times New Roman', Times, serif; */
-}
 
 .container-primeros-auxilios {
     display: grid;
@@ -857,7 +852,7 @@ footer a:hover {
         flex: 1;
     } 
 
-    .videos iframe{
+    .video-arreglado{
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -877,7 +872,7 @@ footer a:hover {
         flex: 1;
     } 
 
-    .videos iframe{
+    .video-arreglado{
         padding-top: 10px;
         padding-bottom: 10px;
     }
