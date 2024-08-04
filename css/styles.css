@@ -838,6 +838,56 @@ footer a:hover {
     line-height: 1.3;
 }
 
+.separador-linea{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.titulo-emergencia{
+    text-align: center;
+    color: rgb(236, 33, 33);
+    font-size: 25px;
+    padding-bottom: 40px;
+}
+
+#hospitales{
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+#hospitales h2{
+    color: darkgreen;
+    padding-bottom: 10px;
+    font-size: 23px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    
+
+}
+
+#hospitales a{
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+}
+
+#hospitales a:hover{
+    transform: scale(1.2);
+    color: #ffbc0e;
+}
+
+.buscar-hospitales {
+    text-align: center;
+    font-size: 28px;
+}
+
+.buscar-hospitales a{
+    text-decoration: none;
+    color: darkgreen;
+
+}
+
+
 @media screen and (max-width: 767px) {
     .container-primeros-auxilios {
         display: grid;
@@ -877,10 +927,6 @@ footer a:hover {
         padding-bottom: 10px;
     }
 }
-
-
-
-
 
 
 /* Fin de PRIMEROS AUXILIOS */
