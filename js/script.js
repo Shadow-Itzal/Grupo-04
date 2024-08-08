@@ -38,7 +38,7 @@ const hospitales = [
         direccion: "Calle 14 entre 65 y 66 - N° 1631",
         telefono: "0221 453-5901",
         email: "ludovica@ms.gba.gov.ar",
-        sitio: ""
+        sitio: " "
     },
     {
         nombre: "Hospital San Juan de Dios",

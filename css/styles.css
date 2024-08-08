@@ -878,13 +878,16 @@ footer a:hover {
 
 .buscar-hospitales {
     text-align: center;
-    font-size: 28px;
 }
 
 .buscar-hospitales a{
     text-decoration: none;
     color: darkgreen;
+    font-size: 23px;
+}
 
+.buscar-hospitales a:hover{
+    color: #ffbc0e;
 }
 
 
