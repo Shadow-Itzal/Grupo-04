@@ -53,6 +53,8 @@ const hospitalesJSON = `
 
 // Convertir el JSON inicial a un array de objetos
 const hospitales = JSON.parse(hospitalesJSON);
+console.log(hospitalesJSON); // mostrar el contenido JSON obtenido desde localStorage
+console.log(typeof(hospitalesJSON)); // mostrar el tipo de datos del contenido JSON (string)
 
 
 // Función para guardar en el Local Storage
@@ -63,7 +65,7 @@ function guardarEnLocalStorage(datos) {
 // Función para cargar desde el Local Storage
 function cargarDesdeLocalStorage() {
     const datos = localStorage.getItem('hospitales');
-    return datos ? JSON.parse(datos) : hospitales;
+    return datos ? JSON.parse(datos) : hospitales; // pasar de datos JSON a objetos
 }
 
 
@@ -88,7 +90,9 @@ function marcarMalo(index) {
 function mostrarHospitales() {
     const hospitales = cargarDesdeLocalStorage();
     const contenedor = document.getElementById('hospitales');
-    contenedor.innerHTML = '';
+    contenedor.innerHTML = ''; // limpiar el contenido previo del contenedor
+
+    // Iterar sobre cada hospital y crear su representacion
     hospitales.forEach((hospital, index) => {
         const hospitalDiv = document.createElement('div'); // Crear un elemento 'div' para cada hospital
         hospitalDiv.className = 'hospital'; // Asignar la clase 'hospital' al nuevo 'div'
