@@ -15,6 +15,32 @@ document.addEventListener("DOMContentLoaded", function() { /* Asegura que el có
 
 
 
+// --------------------------   INICIO DE FUNCION SALUDO   ---------------------- 
+
+// Función que se ejecuta al cargar la página para mostrar un saludo basado en la hora del día
+function mostrarSaludo() {
+    
+    const saludoElemento = document.getElementById('saludo'); // Obtiene el elemento HTML con el id 'saludo'
+    const hora = new Date().getHours(); // Obtiene la hora actual del sistema (de 0 a 23)
+    let saludo = '¡Bienvenido! Que tengas '; // Variable para almacenar el saludo
+
+    // Determina el saludo basado en la hora del día
+    if (hora >= 6 && hora < 12) {
+        saludo += 'un buen día!';
+    } else if (hora >= 12 && hora < 18) {
+        saludo += 'una buena tarde!';
+    } else {
+        saludo += 'una buena noche!';
+    }
+
+    // Establece el contenido de texto del elemento 'saludo' con el mensaje completo de saludo
+    saludoElemento.textContent = saludo;
+}
+
+// --------------------------   FIN DE FUNCION SALUDO   ----------------------
+
+
+
 // ---------------------  INICIO BASE DE DATOS Y FUNCIONES  ---------------
 
 // Inicialización de la base de datos de hospitales en formato JSON
