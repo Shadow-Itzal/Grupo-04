@@ -1,3 +1,5 @@
+// --------------------------   INICIO MENU HAMBURGUESA - todas las paginas  ----------------------
+
 /* El JavaScript agrega la funcionalidad para alternar el menú hamburguesa. */
 
 
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() { /* Asegura que el có
 
 
 
-// --------------------------   INICIO DE FUNCION SALUDO   ---------------------- 
+// --------------------------   INICIO DE FUNCION SALUDO - inicio  ---------------------- 
 
 // Función que se ejecuta al cargar la página para mostrar un saludo basado en la hora del día
 function mostrarSaludo() {
@@ -41,7 +43,7 @@ function mostrarSaludo() {
 
 
 
-// ---------------------  INICIO BASE DE DATOS Y FUNCIONES  ---------------
+// ---------------------  INICIO BASE DE DATOS Y FUNCIONES - primeros auxilios ---------------
 
 // Inicialización de la base de datos de hospitales en formato JSON
 const hospitalesJSON = `
@@ -131,7 +133,7 @@ function mostrarHospitales() {
             <p><strong>Email:</strong> <a href="mailto:${hospital.email}">${hospital.email}</a></p>
             <p><strong>Sitio:</strong> <a href="${hospital.sitio}" target="_blank">${hospital.sitio}</a></p>
             <div class="boton-bueno">
-                <button onclick="marcarBueno(${index})">¿Es bueno?</button> <span>${hospital.bueno ? '✔️' : ''}</span>
+                <button class="botonHospital" onclick="marcarBueno(${index})">¿Es bueno?</button> <span>${hospital.bueno ? '✔️' : ''}</span>
             </div>
             <div class="boton-malo">
                 <button onclick="marcarMalo(${index})">¿Es malo?</button> <span>${hospital.malo ? '❌' : ''}</span>
@@ -146,3 +148,94 @@ function mostrarHospitales() {
 document.addEventListener('DOMContentLoaded', mostrarHospitales);
 
 
+// --------------------------   FIN BASE DE DATOS Y FUNCIONES   ----------------------
+
+
+
+// ---------------------------  INICIO DE FORMULARIO - nosotros ---------------
+
+// Seleccionamos el formulario y el contenedor de mensajes
+const formulario = document.getElementById('formularioComentarios'); // Selecciona el formulario por su ID
+const contenedorMensaje = document.getElementById('mensaje'); // Selecciona el contenedor de mensajes por su ID
+
+// Manejamos el evento de envío del formulario
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault(); // Prevenimos el comportamiento predeterminado del formulario (enviar y recargar la página)
+
+    // Obtenemos los valores de los campos
+    const nombre = document.getElementById('nombre').value.trim(); // Obtiene el valor del campo de nombre y elimina espacios en blanco al inicio y final
+    const correo = document.getElementById('correo').value.trim(); // Obtiene el valor del campo de correo y elimina espacios en blanco
+    const comentario = document.getElementById('comentario').value.trim(); // Obtiene el valor del área de texto de comentario y elimina espacios en blanco
+
+    // Validaciones
+    if (nombre === '') { // Verifica si el campo de nombre está vacío
+        mostrarMensaje('Por favor, ingrese su nombre.', 'error'); // Muestra un mensaje de error si el campo de nombre está vacío
+        return; // Sale de la función para que no continúe con el envío
+    }
+
+    if (nombre.length < 3) { // Verifica si el nombre tiene menos de 3 caracteres
+        mostrarMensaje('El nombre debe tener al menos 3 caracteres.', 'error'); // Muestra un mensaje de error si el nombre es demasiado corto
+        return; // Sale de la función para que no continúe con el envío
+    }
+
+
+    if (!validarCorreo(correo)) { // Verifica si el formato del correo es válido usando la función validarCorreo
+        mostrarMensaje('Por favor, ingrese un email válido.', 'error'); // Muestra un mensaje de error si el correo es inválido
+        return; // Sale de la función para que no continúe con el envío
+    }
+
+
+    if (comentario === '') { // Verifica si el campo de comentario está vacío
+        mostrarMensaje('Por favor, ingrese su comentario.', 'error'); // Muestra un mensaje de error si el campo de comentario está vacío
+        return; // Sale de la función para que no continúe con el envío
+    }
+
+    if (comentario.length < 3) { // Verifica si el comentario tiene menos de 3 caracteres
+        mostrarMensaje('El comentario debe tener al menos 3 caracteres.', 'error'); // Muestra un mensaje de error si el comentario es demasiado corto
+        return; // Sale de la función para que no continúe con el envío
+    }
+
+
+    // Guardamos en localStorage
+    guardarEnLocalStorage(nombre, correo, comentario); // Llama a la función para guardar los datos en el almacenamiento local del navegador
+
+    // Mostramos mensaje de éxito
+    mostrarMensaje('Comentario enviado con éxito.', 'exito'); // Muestra un mensaje de éxito después de guardar los datos
+
+    // Limpiamos el formulario
+    formulario.reset(); // Limpia todos los campos del formulario
+});
+
+// Función para validar el email
+function validarCorreo(correo) {
+    const expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar el formato del correo electrónico
+    return expresionRegular.test(correo); // Devuelve true si el correo es válido, false si no lo es
+}
+
+// Función para mostrar mensajes
+function mostrarMensaje(mensaje, tipo) {
+    contenedorMensaje.textContent = mensaje; // Establece el texto del mensaje en el contenedor
+    contenedorMensaje.className = tipo; // Añade una clase al contenedor de mensajes según el tipo (error o éxito)
+}
+
+// Función para guardar los datos en localStorage
+function guardarEnLocalStorage(nombre, correo, comentario) {
+    const datosComentario = {
+        nombre: nombre, // Almacena el nombre en el objeto datosComentario
+        correo: correo, // Almacena el correo en el objeto datosComentario
+        comentario: comentario, // Almacena el comentario en el objeto datosComentario
+        fecha: new Date().toLocaleString() // Almacena la fecha y hora actuales en el objeto datosComentario
+    };
+
+    // Obtenemos los comentarios previos del localStorage
+    let comentarios = JSON.parse(localStorage.getItem('comentarios')) || []; // Recupera el array de comentarios desde localStorage (si existe), o inicializa uno vacío
+
+    // Añadimos el nuevo comentario
+    comentarios.push(datosComentario); // Añade el nuevo comentario al array de comentarios
+
+    // Guardamos nuevamente en el localStorage
+    localStorage.setItem('comentarios', JSON.stringify(comentarios)); // Convierte el array de comentarios en una cadena JSON y lo guarda en localStorage
+}
+
+
+// ---------------------------  FIN DE FORMULARIO  ---------------

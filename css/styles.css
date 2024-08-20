@@ -983,12 +983,75 @@ footer a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* agregar sombra suave en la imagen */
 }
 
+.contenedor-nosotros h2 {
+    font-size: 21px;
+}
+
 .contenedor-nosotros p {
     display: block;
     margin-top: 10px; /* espacio entre imagen y texto */
     font-size: 20px; /* tamaño del texto */
     line-height: 1.5; /* ajusta el espaciado entre lineas del texto */
     max-width: 78%; /* ancho maximo del parrafo */
+}
+
+
+/* CSS parte de formulario */
+
+.formulario-contenedor {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
+}
+
+.tituloComentario {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 22px;
+    padding-top: 5px; /* padding arriba */
+    padding-bottom: 15px; /* padding abajo */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total */
+}
+
+.btn-enviar {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #5ec461;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #3e8e41; /* Cambia el color de fondo cuando el cursor está sobre el botón */
+}
+
+#mensaje {
+    margin: 10px;
+    text-align: center;
+    font-size: 17px;
+    color: darkred;
 }
 
 
