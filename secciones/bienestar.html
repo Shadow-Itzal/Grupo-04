@@ -70,6 +70,18 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/K5N2dYUY6is?si=3GXP_6sOTVjL1wyO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
+    <!-- -------- INICIO DE CALCULADORA DE IMC -------- -->
+
+    <div class="contenedor-imc">
+        <h2 class="imc">Calculadora de IMC</h2>
+        <input type="number" id="peso" placeholder="Peso en kg">
+        <input type="number" id="altura" placeholder="Altura en cm">
+        <button onclick="calcularIMC()">Calcular IMC</button>
+        <p id="resultado"></p>
+    </div>
+
+    <!-- -------- FIN DE CALCULADORA DE IMC -------- -->
+
 
     <footer class="footer">
         <br>
@@ -128,5 +140,9 @@
 
     <!-- JavaScript para el menu hamburguesa -->
     <script src="../js/script.js"></script>
+
+    <!-- JavaScript para la calculadora IMC -->
+    <script src="../js/peso.js"></script>
+
 </body>
 </html>
