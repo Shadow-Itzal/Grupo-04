@@ -632,7 +632,6 @@ footer a:hover {
 }
 
 .receta-imagen img {
-    width: 100%;
     border-radius: 10px;
     align-self: center;
     width: 100%; /* Ocupa el 100% del ancho de la celda del grid */
@@ -790,7 +789,7 @@ footer a:hover {
     margin-bottom: 10px;
 }
 
-/* Estilo del nombre del usuario */
+/* Estilo del titulo */
 .recetas-cartas h2{
     font-size: 18px;
     margin: 10px 0;
@@ -861,10 +860,11 @@ footer a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
     margin: 20px;
     padding: 20px;
+    gap: 20px;
 }
 
-/*Calculo de IMC*/
 
+/* Calculo de IMC */
 
 .contenedor-imc {
     background-color: white;
@@ -875,6 +875,7 @@ footer a:hover {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
 input {
     margin: 10px 0;
     padding: 10px;
@@ -886,9 +887,9 @@ input {
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
     color: darkgreen;
 }
+
 .contenedor-imc button {
     padding: 10px;
     width: 100%;
@@ -898,6 +899,7 @@ input {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .contenedor-imc button:hover {
     background-color: #45a049;
 }
@@ -907,9 +909,30 @@ input {
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
     color: darkgreen;
 }
+
+
+                    /* ............... */
+            /* Media Queries - Estilos generales */
+
+/* Media query para pantallas menores a 768px (móviles y tablets pequeñas) */
+@media screen and (max-width: 767px) {
+
+    .contenedor-imc {
+        padding: 20px;
+        width: 370px;      
+    }
+
+    .videos iframe{
+        width: 100%; /* Ocupa el 100% del ancho de la celda */
+        height: 100%; /* Ocupa el 100% del alto de la celda */
+        object-fit: cover; /* Ajusta la imagen manteniendo la proporción y recortándola si es necesario */ 
+    }
+
+}
+
+
 /* Fin de BIENESTAR */
 
 
@@ -1033,7 +1056,12 @@ input {
 }
 
 
+                    /* ............... */
+            /* Media Queries - Estilos generales */
+
+/* Media query para pantallas menores a 768px (móviles y tablets pequeñas) */
 @media screen and (max-width: 767px) {
+
     .container-primeros-auxilios {
         display: grid;
         grid-template-columns: 1fr;
@@ -1047,13 +1075,24 @@ input {
         flex: 1;
     } 
 
-    .video-arreglado{
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .titulo-emergencia{
+        font-size: 22px;
+    }
+
+    #hospitales{
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+    
+    #hospitales h2{
+        font-size: 20px;
     }
 }
 
+
+/* Media query para pantallas entre 768px y 1023px (tablets y pantallas pequeñas de escritorio) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
     .container-primeros-auxilios {
         display: grid;
         grid-template-columns: 1fr;
@@ -1067,10 +1106,6 @@ input {
         flex: 1;
     } 
 
-    .video-arreglado{
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
 }
 
 
@@ -1186,6 +1221,10 @@ input, textarea {
     main h2, h3 {
         font-size: 18px; /* tamaño del texto */
         max-width: 74%; /* ancho maximo del parrafo */
+    }
+
+    .formulario-contenedor {
+        width: 350px;
     }
 
 } 
